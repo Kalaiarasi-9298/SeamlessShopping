@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Beauty Products || Seamless Shopping</title>
+  <style>                                                    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+
+    .product-grid img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .product-description {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .product-description h2 {
+      margin-top: 0;
+    }
+
+    .add-to-cart-button,
+    .buy-now-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .add-to-cart-button {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    .buy-now-button {
+      background-color: #337ab7;
+      color: #fff;
+    }
+    .Return{
+      border: 1px solid blue;
+      align-items: center;
+      justify-content: space-between;
+      width: 500px;
+      margin: auto;
+      text-align: center;
+      background-color: aqua;
+      padding: 10px;
+    }
+    .Return a{
+      text-decoration: none;
+      text-align: center;
+    }   
+  </style>
+</head>
+<body>
+  <div class="product-grid" id="product-grid">
+    <img src="   https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU9tRMEGChTy8tYpeUVmTD3q5_WCmDgjBzOQ&s
+        " alt="">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7B9rtgWmUd6_SFgIRR1ACxQKZ-7Swqpmh5w&s
+        " alt="">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP3pUOc1ZSnhD3oiYfOhkpJUZly49eg8_HoA&s
+        " alt="">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKXezAgzJ_tddojRL1BQ4FGHOhOAFAoyVqag&s
+        " alt="">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY_shfum2JLyV5d-mvHcJqzA5nSQ4SjW-nEA&s
+        " alt="">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvPf44x9Y89pjjIdxOCKgam0rbgzcDn3JUvw&s
+        " alt="">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdFWEtgNi65SmfzT7waVim_JF5J_2Hrue09w&s
+        " alt="">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9_bO1zBU92eZJP6mRFRfLrJ_1I7grrQ7Ojg&s
+        " alt="">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUDAesAn9KCHMfPik6DrP8NKHIU_7a1TJbLQ&s" alt="">
+
+  </div>
+
+  <div class="product-description" id="product-description">
+    <h2 id="product-name"></h2>
+    <p id="product-description-text"></p>
+    <button class="add-to-cart-button" id="add-to-cart-button">Add to Cart</button>
+    <button class="buy-now-button" id="buy-now-button">Buy Now</button>
+  </div>
+  <div class="Return">
+    <h1><a href="./index.html">Return To Home</a></h1>
+
+  </div>
+
+  <script>
+    const products = [
+      {
+        name: 'Make-up Pallet',
+        description: 'A beautiful Set, perfect for formal occasions.',
+      },
+      {
+        name: 'Make-up Sponge',
+        description: 'Perfectly smooth and soft.',
+      },
+      {
+        name: 'Make-up brush',
+        description: 'A light and breezy.',
+      },
+      {
+        name: 'Elegant Brushes',
+        description: 'A beautiful elegant brushes perfect for all faces.',
+      },
+      {
+        name: 'Foundation Cream',
+        description: 'Suitable for normal skin type.',
+      },
+      {
+        name: 'Liquid Lipstick',
+        description: 'A comfortable casual liquid lipstick ideal for everyday.',
+      },
+      {
+        name: 'Sun Screen SPF 50+++',
+        description: 'A light weight non-greezy sunscreen suitable for everyone.',
+      },
+    
+      {
+        name: 'Matte Lipstick',
+        description: 'A comfortable, non-sticky ideal for everyday wear.',
+      },
+      {
+        name: 'BB Cream',
+        description: 'A light and breezy for warm days.',
+      },
+      // Add more products as needed
+    ];
+
+    const productGrid = document.getElementById('product-grid');
+    const productDescription = document.getElementById('product-description');
+    const productName = document.getElementById('product-name');
+    const productDescriptionText = document.getElementById('product-description-text');
+
+    productGrid.addEventListener('click', (event) => {
+      if (event.target.tagName === 'IMG') {
+        const index = Array.from(productGrid.children).indexOf(event.target);
+        const product = products[index];
+        productName.textContent = product.name;
+        productDescriptionText.textContent = product.description;
+        productDescription.style.display = 'block';
+      }
+    });
+
+    document.getElementById('add-to-cart-button').addEventListener('click', () => {
+      alert('Product added to cart!');
+      productDescription.style.display = 'none';
+    });
+
+    document.getElementById('buy-now-button').addEventListener('click', () => {
+      alert('Proceeding to checkout!');
+      productDescription.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target === productDescription) {
+        productDescription.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

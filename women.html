@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Women's Dresses || Seamless Shopping</title>
+  <style> 
+   .Return{
+      border: 1px solid blue;
+      align-items: center;
+      justify-content: space-between;
+      width: 500px;
+      margin: auto;
+      text-align: center;
+      background-color: aqua;
+      padding: 10px;
+    }
+    .Return a{
+      text-decoration: none;
+      text-align: center;
+    }                                                    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+
+    .product-grid img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .product-description {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .product-description h2 {
+      margin-top: 0;
+    }
+
+    .add-to-cart-button,
+    .buy-now-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .add-to-cart-button {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    .buy-now-button {
+      background-color: #337ab7;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-grid" id="product-grid">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpNL_DcpM2GOeM3a62Et8Duggo6G3UHBKXgE8gGgMgfQRhKw2xJINbSKI&s" alt="Elegant Dress">
+    <img src="https://images.meesho.com/images/products/388169858/wrxc0_1200.jpg" alt="Casual Dress">
+    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTGVDKn2pEnis0ZgdBfacQVOkN4yxO1X_2YVnAzdsiP3762ov--JIPktznyEIuW3sH_GExxXgXaTeY1eBNBCgA8K-S2tCdL-P6D4DYmLKd3" alt= "Summer Dress">
+    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQaZuymc2CgSMZhEJDc2_N5FMqU-xENZKLx4K3Bqfj4g1wn8jzV1OwwS8v1R8M3faVQSr7H81GeQzuESrNYCA31rKb8S2qtoUDqUIjx4bU" alt="Casual Dress">
+    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcReUUxnbbCZrJoM1xFxUj-hhvy_TGE2OFcSfe7-3PYWP-CvwwV6NpAWsOvJJFhUFD2dxL3kFKuui5nQv-Mi2xLTfrosm2h2M0BEJCrOf3k" alt="Winter Dress">
+    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS8JWvQUZ34pVsgFtolnvhBPLAt7Xq7Bcu61PKKFkFaiUpks4ngM65vED_9Kw3c1dFkFVI3wnHOHZuhNJMknMvWV9V8klQzX8E_7bY52saa3ZLVUd7yKzAEHg" alt="Formal Dress">
+    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS8JWvQUZ34pVsgFtolnvhBPLAt7Xq7Bcu61PKKFkFaiUpks4ngM65vED_9Kw3c1dFkFVI3wnHOHZuhNJMknMvWV9V8klQzX8E_7bY52saa3ZLVUd7yKzAEHg" alt="Casual dress">
+    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTW4TI3Il_L6Siw6iQeAwffZAMdHDqgjkoUbSi8Y7LwopLSOuogEfqY0LjuVS76993mVx681sDNl-BOJZhP_3NQoCQTmakPXe5s9iCMLXhqWmwgvAxx9NYZWA" alt="Formal dress">
+    
+  </div>
+
+  <div class="product-description" id="product-description">
+    <h2 id="product-name"></h2>
+    <p id="product-description-text"></p>
+    <button class="add-to-cart-button" id="add-to-cart-button">Add to Cart</button>
+    <button class="buy-now-button" id="buy-now-button">Buy Now</button>
+  </div>
+  <div class="Return">
+    <h1><a href="./index.html">Return To Home</a></h1>
+
+  </div>
+
+  <script>
+    const products = [
+      {
+        name: 'Elegant Dress',
+        description: 'A beautiful elegant dress perfect for formal occasions.',
+      },
+      {
+        name: 'Casual Dress',
+        description: 'A comfortable casual dress ideal for everyday wear.',
+      },
+      {
+        name: 'Summer Dress',
+        description: 'A light and breezy summer dress for warm days.',
+      },
+      {
+        name: 'Elegant Dress',
+        description: 'A beautiful elegant dress perfect for formal occasions.',
+      },
+      {
+        name: 'Casual Dress',
+        description: 'A comfortable casual dress ideal for everyday wear.',
+      },
+      {
+        name: 'Summer Dress',
+        description: 'A light and breezy summer dress for warm days.',
+      },
+      {
+        name: 'Elegant Dress',
+        description: 'A beautiful elegant dress perfect for formal occasions.',
+      },
+      {
+        name: 'Casual Dress',
+        description: 'A comfortable casual dress ideal for everyday wear.',
+      }
+  
+    ];
+
+    const productGrid = document.getElementById('product-grid');
+    const productDescription = document.getElementById('product-description');
+    const productName = document.getElementById('product-name');
+    const productDescriptionText = document.getElementById('product-description-text');
+
+    productGrid.addEventListener('click', (event) => {
+      if (event.target.tagName === 'IMG') {
+        const index = Array.from(productGrid.children).indexOf(event.target);
+        const product = products[index];
+        productName.textContent = product.name;
+        productDescriptionText.textContent = product.description;
+        productDescription.style.display = 'block';
+      }
+    });
+
+    document.getElementById('add-to-cart-button').addEventListener('click', () => {
+      alert('Product added to cart!');
+      productDescription.style.display = 'none';
+    });
+
+    document.getElementById('buy-now-button').addEventListener('click', () => {
+      alert('Proceeding to checkout!');
+      productDescription.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target === productDescription) {
+        productDescription.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

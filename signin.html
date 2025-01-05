@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In & Sign Up || Seamless Shopping</title>
+    <style>
+        main{
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+        }
+      .Return{
+      border: 1px solid blue;
+      align-items: center;
+      justify-content: space-between;
+      width: 500px;
+      margin: auto;
+      text-align: center;
+      background-color: aqua;
+      padding: 10px;
+     position: relative;
+    }
+    .Return a{
+      text-decoration: none;
+      text-align: center;
+    }   
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            padding-right: 20px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #337ab7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            background-color: #286090;
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 10px;
+            cursor: pointer;
+            color: #337ab7;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<main>
+<div class="container" id="sign-in-container">
+    <h2>Sign In</h2>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="sign-in-email" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="sign-in-password" required>
+    </div>
+    <button class="button" id="sign-in-button">Sign In</button>
+    <p class="message" id="sign-in-message"></p>
+    <p class="toggle-link" id="toggle-sign-up">Don't have an account? Sign Up</p>
+</div>
+
+<div class="container" id="sign-up-container" style="display: none;">
+    <h2>Sign Up</h2>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="sign-up-email" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="sign-up-password" required>
+    </div>
+    <button class="button" id="sign-up-button">Sign Up</button>
+    <p class="message" id="sign-up-message"></p>
+    <p class="toggle-link" id="toggle-sign-in">Already have an account? Sign In</p>
+</div>
+<div class="Return">
+    <h1><a href="./index.html">Return To Home</a></h1>
+
+  </div>
+</main>
+<script>
+    const registeredUsers = [
+        { email: 'user1@example.com', password: 'password123' },
+        { email: 'user2@example.com', password: 'password456' }
+    ];
+
+    const signInContainer = document.getElementById('sign-in-container');
+    const signUpContainer = document.getElementById('sign-up-container');
+    const signInButton = document.getElementById('sign-in-button');
+    const signUpButton = document.getElementById('sign-up-button');
+    const toggleSignUp = document.getElementById('toggle-sign-up');
+    const toggleSignIn = document.getElementById('toggle-sign-in');
+
+    toggleSignUp.addEventListener('click', () => {
+        signInContainer.style.display = 'none';
+        signUpContainer.style.display = 'block';
+    });
+
+    toggleSignIn.addEventListener('click', () => {
+        signUpContainer.style.display = 'none';
+        signInContainer.style.display = 'block';
+    });
+
+    signInButton.addEventListener('click', () => {
+        const email = document.getElementById('sign-in-email').value;
+        const password = document.getElementById('sign-in-password').value;
+        const messageElement = document.getElementById('sign-in-message');
+
+        const user = registeredUsers.find(user => user.email === email);
+
+        if (user) {
+            if (user.password === password) {
+                messageElement.style.color = 'green';
+                messageElement.textContent = 'Login successful!';
+            } else {
+                messageElement.style.color = 'red';
+                messageElement.textContent = 'Incorrect password. Please try again.';
+            }
+        } else {
+            messageElement.style.color = 'red';
+            messageElement.textContent = 'User not registered. Please sign up.';
+        }
+    });
+
+    signUpButton.addEventListener('click', () => {
+        const email = document.getElementById('sign-up-email').value;
+        const password = document.getElementById('sign-up-password').value;
+        const messageElement = document.getElementById('sign-up-message');
+
+        const existingUser = registeredUsers.find(user => user.email === email);
+
+        if (existingUser) {
+            messageElement.style.color = 'red';
+            messageElement.textContent = 'User already registered. Please sign in.';
+        } else {
+            registeredUsers.push({ email, password });
+            messageElement.style.color = 'green';
+            messageElement.textContent = 'Sign up successful! Please sign in.';
+        }
+    });
+</script>
+
+</body>
+</html>

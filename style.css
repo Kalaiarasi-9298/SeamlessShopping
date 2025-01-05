@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.main {
+    padding: 0;
+}
+.top {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+.top a {
+    color: #f4c542;
+    text-decoration: none;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.images section {
+    margin: 10px;
+    text-align: center;
+}
+.images img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.images h5 {
+    margin: 5px 0;
+}
+.search-bar img {
+    width: 50px;
+    margin-right: 20px;
+}
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#nav-bar1{
+    background-color: whitesmoke;
+}
+#nav-bar1 a{
+    color: black;
+}
+#home{
+    color: red;
+}
+
+.nav-bar1, .nav-bar2 {
+    display: flex;
+    justify-content: space-around;
+    background-color: #444;
+    padding: 10px 0;
+}
+.nav-bar1 a, .nav-bar2 a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+.nav-bar1 a:hover, .nav-bar2 a:hover {
+    background-color: #555;
+    border-radius: 4px;
+    color: blue;
+}
+.signing-btn {
+    text-align: center;
+    margin: 20px;
+}
+.signing-btn button {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 255, 0.473);
+    border-radius: 4px;
+}
+.signing-btn button:hover {
+    background-color: #555;
+}
+.top-100, .top-brands, .deals-now, .contact, .updates {
+    text-align: center;
+    margin: 20px;
+}
+.top-brands{
+    display: flex;
+justify-content: space-between;
+}
+.top-100{
+    display: flex;
+    background-color: skyblue;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+.deals-now{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: rgba(0, 0, 0, 0.911);
+}
+#second-h1{
+    color: violet;
+}
+#sec-h4{
+    background-color: yellow;
+    border-radius: 50%;
+    padding: 20px;
+}
+#first-h1{
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+    font-style: oblique;
+}
+#first-h4{
+    background-color: rgba(25, 200, 103);
+    border-radius: 50%;
+    padding: 10px;
+
+
+}
+.top-brands button {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(0, 0, 255, 0.473);
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.top-brands button:hover {
+    background-color: #555;
+}
+.updates{
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    justify-content: end;
+}
+.contact{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.911);
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+#third-h3{
+    color: brown;
+}
+#para1{
+    color: white;
+}
+
+.updates input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#update-btn {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+#update-btn:hover {
+    background-color: blue;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+footer a {
+    color: #f4c542;
+    text-decoration: none;
+    margin: 0 10px;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+.product-list {
+    display: none;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    width: 300px;
+    background-color: #fff;
+    position: relative;
+    z-index: 1000;
+}
+.product-list div {
+    padding: 10px;
+    cursor: pointer;
+}
+.product-list div:hover {
+    background-color: #f0f0f0;
+}
+.product-images {
+    display: none;
+    margin: 20px;
+}
+.product-images img {
+    width: 200px;
+    margin: 10px;
+}
